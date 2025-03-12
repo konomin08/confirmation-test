@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 
 class ContactController extends Controller
@@ -12,13 +12,13 @@ class ContactController extends Controller
         return view('index');
     }
     //contact.blade.php（フォーム入力ページ）を呼び出す
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
         $contact = $request->only(['name', 'email', 'tel', 'content']);
         return view('confirm', ['contact' => $contact]);
     // 問い合わせフォームの送信ボタンクリック時に行われる処理
     }
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
         $contact = $request->only(['name', 'email', 'tel', 'content']);
         Contact::create($contact);
