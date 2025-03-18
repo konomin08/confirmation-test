@@ -24,7 +24,8 @@
       <div class="confirm__heading">
         <h2>お問い合わせ内容確認</h2>
       </div>
-      <form class="form" action="/contacts" method="post">
+      <form class="form" action="{{ url('/contacts') }}" method="post">
+      {{-- <form class="form" action="/contacts/confirm" method="post"> --}}
       <!--storeアクションを呼び出すルーティングと結びつける-->
         @csrf
         <div class="confirm-table">
@@ -32,7 +33,19 @@
             <tr class="confirm-table__row">
               <th class="confirm-table__header">お名前</th>
               <td class="confirm-table__text">
-                <input type="text" name="name" value="{{ $contact['name'] }}" readonly />
+                <div class="name-container">
+                {{-- <input type="text" name="name" value="{{ $contact['last-name'] }} {{ $contact['first-name'] }}" readonly /> --}}
+                    <input type="text" name="last_name" value="{{ $contact['last_name'] }}" readonly />
+                    <input type="text" name="first_name" value="{{ $contact['first_name'] }}" readonly />
+                    <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}">
+                    <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}">
+                </div>
+              </td>
+            </tr>
+            <tr class="confirm-table__row">
+              <th class="confirm-table__header">性別</th>
+              <td class="confirm-table__text">
+                <input type="text" name="gender" value="{{ $contact['gender'] }}" readonly />
               </td>
             </tr>
             <tr class="confirm-table__row">
@@ -48,6 +61,24 @@
               </td>
             </tr>
             <tr class="confirm-table__row">
+              <th class="confirm-table__header">住所</th>
+              <td class="confirm-table__text">
+                <input type="tel" name="address" value="{{ $contact['address'] }}" readonly />
+              </td>
+            </tr>
+            <tr class="confirm-table__row">
+              <th class="confirm-table__header">建物名</th>
+              <td class="confirm-table__text">
+                <input type="tel" name="building" value="{{ $contact['building'] }}" readonly />
+              </td>
+            </tr>
+            <tr class="confirm-table__row">
+              <th class="confirm-table__header">お問い合わせの種類</th>
+              <td class="confirm-table__text">
+                <input type="tel" name="category" value="{{ $contact['category'] }}" readonly />
+              </td>
+            </tr>
+            <tr class="confirm-table__row">
               <th class="confirm-table__header">お問い合わせ内容</th>
               <td class="confirm-table__text">
                 <input type="text" name="content" value="{{ $contact['content'] }}" readonly />
@@ -60,6 +91,16 @@
         </div>
       </form>
     </div>
+    <!-- 修正ボタン -->
+    <form action="{{ route('contact.edit') }}" method="post">
+    @csrf
+    @foreach ($contact as $key => $value)
+        <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+    @endforeach
+    <div class="form__button">
+        <button class="form__button-edit" type="submit">修正</button>
+    </div>
+    </form>
   </main>
 </body>
 
