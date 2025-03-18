@@ -3,7 +3,7 @@
 
 ## 環境構築
 Dockerのビルド
-1.git clone <リポジトリURL>
+1.git clone <https://github.com/konomin08/confirmation-test.git>
   cd <confirmation-test>
 2.docker-compose build
 3.docker-compose up -d
