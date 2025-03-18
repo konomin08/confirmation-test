@@ -14,7 +14,7 @@ class AddCategoryToContacts extends Migration
     public function up()
     {
         Schema::table('contacts', function (Blueprint $table) {
-            $table->string('category')->after('email'); // `email`の次に追加
+            $table->string('category')->after('email');
         });
     }
 

@@ -18,7 +18,7 @@ class ContactFactory extends Factory
             'name' => $this->faker->name,
             'email' => $this->faker->safeEmail,
             'tel' => $this->faker->phoneNumber,
-            'category_id' => $this->faker->numberBetween(1, 5), // カテゴリーIDは1〜5の範囲
+            'category_id' => $this->faker->numberBetween(1, 5),
             'message' => $this->faker->realText(200),
         ];
     }

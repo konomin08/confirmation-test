@@ -19,7 +19,6 @@ class CreateContactsTable extends Migration
             $table->string('email');
             $table->string('tel', 11);
             $table->text('content')->nullable();
-            //項目を増やして後ほど編集
             $table->timestamps();
         });
     }

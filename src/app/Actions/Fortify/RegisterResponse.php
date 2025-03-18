@@ -9,6 +9,6 @@ class RegisterResponse implements RegisterResponseContract
 {
     public function toResponse($request): RedirectResponse
     {
-        return redirect('/login'); // 会員登録後に /login へリダイレクト
+        return redirect('/login');
     }
 }

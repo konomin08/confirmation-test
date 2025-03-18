@@ -10,14 +10,12 @@ use App\Actions\Fortify\RegisterResponse;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-//login後に/adminへ遷移
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Contracts\RegisterResponse as RegisterResponseContract;
 use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
-//login後に/adminへ遷移
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -54,10 +52,9 @@ class FortifyServiceProvider extends ServiceProvider
             return new class implements LoginResponseContract {
                 public function toResponse($request)
                 {
-                    return redirect()->intended('/admin'); // ログイン後に /admin へリダイレクト
+                    return redirect()->intended('/admin');
                 }
             };
         });
-        //login後に/adminへ遷移 
     }
 }

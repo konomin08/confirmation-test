@@ -29,7 +29,7 @@
   
   .admin__table {
     width: 100%;
-    table-layout: fixed; /* 追加 */
+    table-layout: fixed;
     border-collapse: collapse;
     margin-top: 20px;
   }
@@ -37,8 +37,8 @@
   .admin__table th, .admin__table td {
     border: 1px solid #ddd;
     padding: 10px 15px;
-    text-align: center; /* テキストを中央揃えに */
-    word-break: break-word; /* 長い文字列の折り返し */
+    text-align: center;
+    word-break: break-word;
   }
   
   .admin__table th {
@@ -58,7 +58,7 @@
     border-radius: 4px;
     transition: background 0.3s ease;
     display: inline-block;
-    min-width: 60px; /* 幅を固定 */
+    min-width: 60px;
     text-align: center;
   }
   
@@ -115,8 +115,8 @@
     cursor: pointer;
     font-size: 20px;
   }
-.admin__table th:nth-child(1) { width: 15%; } /* お名前 */
-.admin__table th:nth-child(2) { width: 10%; } /* 性別 */
-.admin__table th:nth-child(3) { width: 20%; } /* メールアドレス */
-.admin__table th:nth-child(4) { width: 25%; } /* お問い合わせの種類 */
-.admin__table th:nth-child(5) { width: 15%; } /* ボタン */
+.admin__table th:nth-child(1) { width: 15%; }
+.admin__table th:nth-child(2) { width: 10%; }
+.admin__table th:nth-child(3) { width: 20%; }
+.admin__table th:nth-child(4) { width: 25%; }
+.admin__table th:nth-child(5) { width: 15%; }

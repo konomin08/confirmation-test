@@ -26,7 +26,6 @@
           <p>内容: {{ $contact->content }}</p>
           <p>送信日: {{ $contact->created_at->format('Y-m-d H:i') }}</p>
           
-          <!-- 削除フォーム -->
           <form method="POST" action="{{ route('contact.destroy', $contact->id) }}" id="delete-form">
             @csrf
             @method('DELETE')

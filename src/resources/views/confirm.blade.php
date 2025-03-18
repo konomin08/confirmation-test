@@ -25,8 +25,6 @@
         <h2>お問い合わせ内容確認</h2>
       </div>
       <form class="form" action="{{ url('/contacts') }}" method="post">
-      {{-- <form class="form" action="/contacts/confirm" method="post"> --}}
-      <!--storeアクションを呼び出すルーティングと結びつける-->
         @csrf
         <div class="confirm-table">
           <table class="confirm-table__inner">
@@ -34,7 +32,6 @@
               <th class="confirm-table__header">お名前</th>
               <td class="confirm-table__text">
                 <div class="name-container">
-                {{-- <input type="text" name="name" value="{{ $contact['last-name'] }} {{ $contact['first-name'] }}" readonly /> --}}
                     <input type="text" name="last_name" value="{{ $contact['last_name'] }}" readonly />
                     <input type="text" name="first_name" value="{{ $contact['first_name'] }}" readonly />
                     <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}">
@@ -91,7 +88,7 @@
         </div>
       </form>
     </div>
-    <!-- 修正ボタン -->
+
     <form action="{{ route('contact.edit') }}" method="post">
     @csrf
     @foreach ($contact as $key => $value)

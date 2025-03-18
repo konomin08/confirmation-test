@@ -18,7 +18,6 @@ use App\Http\Controllers\AuthController;
 //ユーザー用問い合わせフォーム
 Route::get('/', [ContactController::class, 'index']);
 Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
-//送信ボタンがクリックされた時に confirm アクションが実行される
 Route::post('/contacts', [ContactController::class, 'store']);
 Route::post('/edit', [ContactController::class, 'edit'])->name('contact.edit');
 Route::get('/thanks', function () {
@@ -27,19 +26,11 @@ Route::get('/thanks', function () {
 
 
 //管理者用問い合わせ管理
-// Route::middleware('auth')->group(function () {
-//     Route::get('/', [AuthController::class, 'index']);
-// });
 Route::middleware('auth')->group(function () {
-    // Route::get('/admin', [AuthController::class, 'admin']);
     Route::get('/admin', [ContactController::class, 'admin'])->name('admin');
-    // 詳細表示用のルート
     Route::get('/contacts/{id}/details', [ContactController::class, 'show'])->name('contact.show');
-
-    // 削除用のルート
     Route::delete('/contacts/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
 });
-//管理画面ができたら’’内の名前を変更する->admin
 
 // 認証関連のルート (Fortifyが対応)
 Route::get('/register', function () {

@@ -14,7 +14,7 @@ class AddCategoryIdToContactsTable extends Migration
     public function up()
     {
         Schema::table('contacts', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id')->after('tel'); // category_id カラムを追加
+            $table->unsignedBigInteger('category_id')->after('tel');
         });
     }
 

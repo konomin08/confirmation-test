@@ -25,9 +25,8 @@
         <h2>お問い合わせ</h2>
       </div>
       <form class="form" action="/contacts/confirm" method="post">
-      <!--confirmアクションを呼び出すルーティングと結びつける-->
         @csrf
-        <!--姓-->
+
         <div class="form__group">
           <div class="form__group-title">
             <span class="form__label--item">お名前</span>
@@ -35,7 +34,6 @@
           </div>
           <div class="form__group-content">
             <div class="form__name-wrapper">
-              <!--姓欄-->
               <div class="form__input--text">
                 <input type="text" name="last_name" placeholder="例：山田" value="{{ old('last_name', $contact['last_name'] ?? '') }}" />
               </div>
@@ -43,9 +41,7 @@
                 @error('last_name')
                 {{ $message }}
                 @enderror
-                <!--バリデーション機能実装-->
               </div>
-              <!--名欄-->
               <div class="form__input--text">
                 <input type="text" name="first_name" placeholder="例：太郎" value="{{ old('first_name', $contact['first_name'] ?? '') }}" />
               </div>
@@ -53,12 +49,11 @@
                 @error('first_name')
                 {{ $message }}
                 @enderror
-                <!--バリデーション機能実装-->
               </div>
             </div>
           </div>
         </div>
-        <!--性別-->
+
         <div class="form__group">
           <div class="form__group-title">
             <span class="form__label--item">性別</span>
@@ -88,7 +83,7 @@
             </div>
           </div>
         </div>
-        <!--メアド-->
+
         <div class="form__group">
           <div class="form__group-title">
             <span class="form__label--item">メールアドレス</span>
@@ -102,11 +97,11 @@
               @error('email')
               {{ $message }}
               @enderror
-              <!--バリデーション機能実装-->
+
             </div>
           </div>
         </div>
-        <!--電話番号-->
+
         <div class="form__group">
           <div class="form__group-title">
             <span class="form__label--item">電話番号</span>
@@ -120,11 +115,10 @@
               @error('tel')
               {{ $message }}
               @enderror
-              <!--バリデーション機能実装-->
             </div>
           </div>
         </div>
-        <!--住所-->
+
         <div class="form__group">
           <div class="form__group-title">
             <span class="form__label--item">住所</span>
@@ -138,11 +132,10 @@
               @error('address')
               {{ $message }}
               @enderror
-              <!--バリデーション機能実装-->
             </div>
           </div>
         </div>
-        <!--建物名-->
+
         <div class="form__group">
           <div class="form__group-title">
             <span class="form__label--item">建物名</span>
@@ -153,7 +146,7 @@
             </div>
           </div>
         </div>
-        <!--問い合わせの種類-->
+
         <div class="form__group">
           <div class="form__group-title">
             <span class="form__label--item">お問い合わせの種類</span>
@@ -162,12 +155,6 @@
           <div class="form__group-content">
             <div class="search-form__item">
               <select class="search-form__item-select" name="category">
-                {{-- <option value="" selected>選択してください</option>
-                <option value="商品のお届けについて">商品のお届けについて</option>
-                <option value="商品の交換について">商品の交換について</option>
-                <option value="商品トラブル">商品トラブル</option>
-                <option value="ショップへのお問い合わせ">ショップへのお問い合わせ</option>
-                <option value="その他">その他</option> --}}
                 <option value="" {{ old('category', $contact['category'] ?? '') == '' ? 'selected' : '' }}>選択してください</option>
                 <option value="商品のお届けについて" {{ old('category', $contact['category'] ?? '') == '商品のお届けについて' ? 'selected' : '' }}>商品のお届けについて</option>
                 <option value="商品の交換について" {{ old('category', $contact['category'] ?? '') == '商品の交換について' ? 'selected' : '' }}>商品の交換について</option>
@@ -180,11 +167,10 @@
               @error('category')
               {{ $message }}
               @enderror
-              <!--バリデーション機能実装-->
             </div>
           </div>
         </div>
-        <!--問い合わせ内容-->
+
         <div class="form__group">
           <div class="form__group-title">
             <span class="form__label--item">お問い合わせ内容</span>
@@ -199,7 +185,6 @@
               @error('content')
               {{ $message }}
               @enderror
-              <!--バリデーション機能実装-->
           </div>
         </div>
         <div class="form__button">

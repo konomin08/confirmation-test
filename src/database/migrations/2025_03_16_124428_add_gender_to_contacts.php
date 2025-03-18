@@ -14,7 +14,7 @@ class AddGenderToContacts extends Migration
     public function up()
     {
         Schema::table('contacts', function (Blueprint $table) {
-            $table->string('gender')->after('name'); // `name`の次に追加
+            $table->string('gender')->after('name');
         });
     }
 

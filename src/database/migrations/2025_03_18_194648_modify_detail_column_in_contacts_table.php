@@ -14,7 +14,7 @@ class ModifyDetailColumnInContactsTable extends Migration
     public function up()
     {
         Schema::table('contacts', function (Blueprint $table) {
-            $table->text('detail')->nullable()->change(); // detailカラムをnullableに変更
+            $table->text('detail')->nullable()->change();
         });
     }
 
@@ -26,7 +26,7 @@ class ModifyDetailColumnInContactsTable extends Migration
     public function down()
     {
         Schema::table('contacts', function (Blueprint $table) {
-            $table->text('detail')->nullable(false)->change(); // 元に戻す
+            $table->text('detail')->nullable(false)->change();
         });
     }
 }

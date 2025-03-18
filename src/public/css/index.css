@@ -34,7 +34,7 @@
   
   .form__group {
     display: flex;
-    flex-wrap: wrap;  /* 横並びを調整 */
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 15px;
   }
@@ -59,7 +59,7 @@
     border: 1px solid #ddd;
     border-radius: 3px;
     appearance: none;
-    width: 600px;  /* 両方の入力フィールドの幅を100%に設定 */
+    width: 600px;
   }
   
   .form__input--text input {
@@ -86,9 +86,9 @@
   }
   /* 性別のCSS */
   .form__gender {
-    display: flex;         /* 横並び */
-    gap: 20px;             /* ボタン間の余白 */
-    justify-content: flex-start; /* 左寄せ */
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
   }
 
   .form__radio {
@@ -98,7 +98,7 @@
   }
 
   .form__radio input[type="radio"] {
-    appearance: none;     /* デフォルトのラジオボタンを非表示 */
+    appearance: none;
     width: 20px;
     height: 20px;
     border: 2px solid #000;
@@ -120,7 +120,7 @@
   }
 
 .form__name-wrapper {
-  display: flex;  /* 横並びにする */
-  gap: 10px;  /* 姓と名の間隔を調整 */
-  width: 100%;  /* 親要素の幅を100%に設定 */
+  display: flex;
+  gap: 10px;
+  width: 100%;
 }
