@@ -19,7 +19,9 @@ class ContactFactory extends Factory
             'email' => $this->faker->safeEmail,
             'tel' => $this->faker->phoneNumber,
             'category_id' => $this->faker->numberBetween(1, 5),
-            'message' => $this->faker->realText(200),
+            'content' => $this->faker->realText(200),
+            'gender' => $this->faker->randomElement(['男性', '女性', '未設定']),
+            'category' => '未分類',
         ];
     }
 }
